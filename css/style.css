@@ -1,0 +1,24 @@
+/* ==========================================================================
+   TELETURBIOS - ESTILO GENERAL PRINCIPAL (css/style.css)
+   ==========================================================================
+   Este archivo actúa como el índice / orquestador principal de estilos.
+   Importa todos los submódulos organizados por responsabilidad.
+   ========================================================================== */
+
+/* 1. Configuración Base, Variables `:root` y Reseteo */
+@import url("base.css");
+
+/* 2. Estructura General: Header, Navbar, Warning Bar y Footer */
+@import url("layout.css");
+
+/* 3. Secciones Principales: Hero, Noticias, Manifiesto y Contacto */
+@import url("sections.css");
+
+/* 4. Terminal Estática y Consola Ejecutable */
+@import url("terminal.css");
+
+/* 5. Archivo Negro y Visor Modal de Expedientes Confidenciales */
+@import url("archivo-negro.css");
+
+/* 6. Sistema de Ventanas Emergentes (Pop-ups) Dinámicos */
+@import url("popups.css");

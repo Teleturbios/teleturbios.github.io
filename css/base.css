@@ -1,0 +1,42 @@
+/* ==========================================================================
+   TELETURBIOS - ESTILOS BASE Y CONFIGURACIÓN GLOBAL (css/base.css)
+   ==========================================================================
+   Este archivo contiene las variables del tema de color neobrutalista,
+   el reseteo básico de elementos HTML y la tipografía por defecto.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES DEL TEMA (DESIGN TOKENS)
+   -------------------------------------------------------------------------- */
+:root {
+    /* Paleta de colores saturados / estridentes de Teleturbios */
+    --rojo: #e30613;       /* Rojo de alerta / peligro */
+    --verde: #00a83b;      /* Verde hacker / matrix */
+    --amarillo: #ffd600;   /* Amarillo de aviso radiactivo */
+    --morado: #7627c7;     /* Morado esquizoide / acento */
+    --negro: #111111;      /* Negro puro para bordes neobrutalistas y sombras grandes */
+    --blanco: #fffdf5;     /* Blanco marfil cálido para fondos de contraste */
+}
+
+/* --------------------------------------------------------------------------
+   2. RESETEO BÁSICO Y REGLAS GLOBALES
+   -------------------------------------------------------------------------- */
+
+/* Aplicar el modelo de caja de borde a todos los elementos para facilitar el cálculo de dimensiones */
+* {
+    box-sizing: border-box;
+}
+
+/* Desplazamiento suave al hacer clic en enlaces internos con anclas (#inicio, #noticias, etc.) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos globales del cuerpo de la página */
+body {
+    margin: 0;
+    background: var(--blanco);
+    color: var(--negro);
+    font-family: "Comic Neue", sans-serif; /* Fuente desenfadada por defecto */
+    overflow-x: hidden;                  /* Evita barras de desplazamiento horizontal no deseadas por rotaciones */
+}

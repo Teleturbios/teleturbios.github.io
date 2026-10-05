@@ -1,0 +1,150 @@
+/* ==========================================================================
+   TELETURBIOS - LAYOUT GENERAL Y ESTRUCTURA (css/layout.css)
+   ==========================================================================
+   Estilos correspondientes a la barra de advertencia superior, la cabecera
+   con el logo neobrutalista, el menú de navegación estilo hacker y el footer.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BARRA DE ADVERTENCIA SUPERIOR
+   -------------------------------------------------------------------------- */
+.warning-bar {
+    background: var(--rojo);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-bottom: 4px solid var(--negro); /* Borde negro grueso neobrutalista */
+}
+
+/* --------------------------------------------------------------------------
+   2. CABECERA PRINCIPAL (HEADER)
+   -------------------------------------------------------------------------- */
+.main-header {
+    position: relative;
+    padding: 70px 20px 90px;
+    background: var(--amarillo);
+    overflow: hidden;
+    border-bottom: 8px solid var(--negro);
+}
+
+/* Manchas/Círculos decorativos de fondo con pseudoelementos ::before y ::after */
+.main-header::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--morado);
+    border-radius: 50%;
+    top: -130px;
+    left: -80px;
+    transform: rotate(20deg);
+}
+
+.main-header::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: var(--verde);
+    border-radius: 40%;
+    right: -50px;
+    bottom: -100px;
+    transform: rotate(-20deg);
+}
+
+/* --------------------------------------------------------------------------
+   3. LOGO Y BADGES DE CABECERA
+   -------------------------------------------------------------------------- */
+/* Insignia / Aviso de Acceso No Autorizado */
+.access-warning {
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    background: var(--morado);
+    color: white;
+    padding: 8px 18px;
+    border: 4px solid var(--negro);
+    font-weight: bold;
+    transform: rotate(-4deg);             /* Inclinación deliberada */
+    box-shadow: 6px 6px var(--negro);    /* Sombra sólida desfasada */
+}
+
+/* Logo Tipográfico Principal */
+.logo {
+    position: relative;
+    z-index: 2;
+    font-family: "Permanent Marker", cursive;
+    font-size: clamp(80px, 15vw, 180px); /* Tamaño responsivo dinámico */
+    line-height: 0.8;
+    margin: 40px 0 20px;
+    color: var(--rojo);
+    letter-spacing: -5px;
+    transform: rotate(-3deg);
+    /* Doble sombra de texto en relieve 3D retro */
+    text-shadow:
+        8px 8px 0 var(--morado),
+        15px 15px 0 var(--negro);
+}
+
+/* Subtítulo bajo el Logo */
+.subtitle {
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    background: var(--verde);
+    color: white;
+    padding: 8px 20px;
+    font-size: 25px;
+    font-weight: bold;
+    border: 4px solid var(--negro);
+    transform: rotate(2deg);
+    box-shadow: 7px 7px var(--negro);
+}
+
+/* --------------------------------------------------------------------------
+   4. MENÚ DE NAVEGACIÓN (NAVBAR)
+   -------------------------------------------------------------------------- */
+.hacker-navbar {
+    background: var(--morado) !important;
+    border-bottom: 5px solid var(--negro);
+    padding: 10px;
+}
+
+.navbar-brand {
+    color: var(--amarillo) !important;
+    font-family: "Permanent Marker", cursive;
+    font-size: 30px;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: bold;
+    margin: 4px;
+    padding: 8px 14px !important;
+    border: 3px solid transparent;
+    transition: 0.15s ease-in-out;
+}
+
+/* Efecto hover interactivo en los enlaces del menú */
+.nav-link:hover {
+    color: var(--negro) !important;
+    background: var(--amarillo);
+    border-color: var(--negro);
+    transform: rotate(-3deg); /* Inclinación al pasar el ratón */
+}
+
+/* --------------------------------------------------------------------------
+   5. PIE DE PÁGINA (FOOTER)
+   -------------------------------------------------------------------------- */
+footer {
+    margin-top: 100px;
+    padding: 60px 20px;
+    background: var(--negro);
+    color: var(--amarillo);
+    text-align: center;
+    font-family: monospace;
+    border-top: 8px solid var(--verde);
+}

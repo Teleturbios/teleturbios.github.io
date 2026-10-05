@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Configuración Básica del Documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TELETURBIOS // BLOG</title>
+
+    <!-- Bootstrap 5 (Framework CSS para rejilla responsiva y componentes base) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fuentes Tipográficas desde Google Fonts (Comic Neue y Permanent Marker) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <!-- Hoja de Estilos Principal (Cargador modular de CSS) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ====================================================================
+         1. BARRA SUPERIOR DE ADVERTENCIA
+         ==================================================================== -->
+    <div class="warning-bar">
+        ⚠️⚠️⚠️ ATENCIÓN: HAS ENTRADO EN ZONA TELETURBIA ⚠️⚠️⚠️
+    </div>
+
+
+    <!-- ====================================================================
+         2. CABECERA PRINCIPAL (HEADER CON LOGO Y TERMINAL DECORATIVA)
+         ==================================================================== -->
+    <header class="main-header">
+        <div class="container text-center">
+
+            <!-- Insignia de Aviso -->
+            <div class="access-warning">
+                ⚠️ ACCESO NO AUTORIZADO ⚠️
+            </div>
+
+            <!-- Logo Tipográfico Neobrutalista -->
+            <h1 class="logo">
+                TELETURBIOS
+            </h1>
+
+            <!-- Subtítulo Enmarcado -->
+            <p class="subtitle">
+                EL BLOG MÁS TURBIO DE INTERNET
+            </p>
+
+            <!-- Imagen Animada Decorativa -->
+            <div class="my-4">
+                <img src="img/teleturbios.gif" width="450" class="img-fluid" alt="Banner Teleturbios GIF">
+            </div>
+
+            <!-- Terminal Simulada de Bienvenida -->
+            <div class="fake-terminal">
+                <div>> conectando con TELETURBIOS_NETWORK...</div>
+                <div>> conexión establecida</div>
+                <div>> firewall: <span>NO</span></div>
+                <div>> usuario detectado: <span>CURIOSO</span></div>
+                <div>> bienvenido, intruso_</div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ====================================================================
+         3. MENÚ DE NAVEGACIÓN ESTILO HACKER (NAVBAR)
+         ==================================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark hacker-navbar">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                ☠️ TT
+            </a>
+
+            <!-- Botón Hamburguesa para Desplegar Menú en Móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Enlaces de Navegación a las Secciones con Anclas (#) -->
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">🏠 INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#noticias">💻 NOTICIAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#archivo-negro">🔓 ARCHIVO NEGRO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#manifiesto">☢️ MANIFIESTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">📡 CONTACTO</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- ====================================================================
+         4. CONTENIDO PRINCIPAL DE LA PÁGINA (MAIN)
+         ==================================================================== -->
+    <main>
+
+        <!-- ----------------------------------------------------------------
+             SECCIÓN HERO: MENSAJE DE BIENVENIDA Y BOTÓN PROHIBIDO
+             ---------------------------------------------------------------- -->
+        <section id="inicio" class="hero">
+            <div class="container">
+                <div class="hero-box text-center">
+
+                    <div class="glitch-text">
+                        ⚠️ MENSAJE INTERCEPTADO ⚠️
+                    </div>
+
+                    <h2>
+                        BIENVENIDO A LA
+                        <span>ZONA TURBIA</span>
+                    </h2>
+
+                    <p>Nadie sabe quiénes somos.</p>
+                    <p>Nadie sabe dónde estamos.</p>
+                    <p>Y probablemente sea mejor así.</p>
+
+                    <div class="d-flex justify-content-center align-items-center flex-wrap gap-4 my-3">
+                        <img src="img/lala_drogas.gif" width="160" class="estrambotico-gif gif-flotante-izq" alt="Lala Cursed">
+                        <img src="img/teletubbies.webp" width="260" class="img-fluid estrambotico-gif" alt="Teletubbies Cursed">
+                        <img src="img/teletubbies-cursed.gif" width="160" class="estrambotico-gif gif-flotante-der" alt="Teletubbies Dance">
+                    </div>
+
+                    <button class="btn btn-danger btn-lg turbo-button" onclick="mostrarMensaje()">
+                        🚨 NO PULSAR 🚨
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ----------------------------------------------------------------
+             SECCIÓN NOTICIAS: TARJETAS CON ÚLTIMOS ARTÍCULOS
+             ---------------------------------------------------------------- -->
+        <section id="noticias" class="py-5">
+            <div class="container">
+
+                <h2 class="section-title">
+                    💀 ÚLTIMAS NOTICIAS 💀
+                </h2>
+
+                <div class="row g-4">
+
+                    <!-- NOTICIA 1 -->
+                    <div class="col-md-4">
+                        <article class="news-card">
+                            <span class="badge bg-danger">URGENTE</span>
+                            <h3>💻 LOS TELETURBIOS HAN VUELTO</h3>
+                            <small>27/09/2026 — 03:33 AM</small>
+                            <img src="img/slendytubbies-nocturnal-protocol.webp" class="img-fluid estrambotico-gif my-2 d-block mx-auto" width="200" alt="Protocolo Nocturno">
+                            <p>
+                                Después de varios meses desaparecidos de Internet, los Teleturbios han vuelto a dejar su huella.
+                            </p>
+                            <a href="#" onclick="leerArticulo(event)">[ LEER MÁS ]</a>
+                        </article>
+                    </div>
+
+                    <!-- NOTICIA 2 -->
+                    <div class="col-md-4">
+                        <article class="news-card card-two">
+                            <span class="badge bg-warning text-dark">FILTRACIÓN</span>
+                            <h3>🔓 ¿QUIÉN ESTÁ DETRÁS DE TELETURBIOS?</h3>
+                            <small>26/09/2026 — 22:17 PM</small>
+                            <img src="img/teletubbi_detenido.png" class="img-fluid estrambotico-gif my-2 d-block mx-auto" width="170" alt="Teletubbi Arrestado">
+                            <p>
+                                Hemos encontrado información que podría revelar la identidad de uno de nuestros miembros...
+                            </p>
+                            <a href="#" onclick="leerArticulo(event)">[ LEER MÁS ]</a>
+                        </article>
+                    </div>
+
+                    <!-- NOTICIA 3 -->
+                    <div class="col-md-4">
+                        <article class="news-card card-three">
+                            <span class="badge bg-info text-dark">OPINIÓN</span>
+                            <h3>☢️ INTERNET ESTÁ DEMASIADO ABURRIDO</h3>
+                            <small>25/09/2026 — 01:11 AM</small>
+                            <img src="img/slendytubbies-roblox.webp" class="img-fluid estrambotico-gif my-2 d-block mx-auto" width="200" alt="Roblox Slendytubbies">
+                            <p>
+                                Una reflexión completamente innecesaria sobre el estado actual de Internet.
+                            </p>
+                            <a href="#" onclick="leerArticulo(event)">[ LEER MÁS ]</a>
+                        </article>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ----------------------------------------------------------------
+             SECCIÓN TERMINAL INTERACTIVA: LÍNEA DE COMANDOS
+             ---------------------------------------------------------------- -->
+        <section class="container py-5">
+            <div class="terminal">
+
+                <div class="terminal-title">
+                    💻 TELETURBIOS_TERMINAL.exe
+                </div>
+
+                <div id="terminal-content">
+                    <p>> iniciando sistema...</p>
+                    <p>> buscando conexión...</p>
+                    <p>> conexión segura: <span>NO</span></p>
+                    <p>> usuario detectado: CURIOSO</p>
+                    <p class="terminal-green">
+                        > escribe <b>help</b> para ver los comandos
+                    </p>
+                </div>
+
+                <div class="p-3 bg-black">
+                    <input id="terminal-input" type="text" placeholder="escribe un comando..." onkeydown="ejecutarComando(event)">
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ----------------------------------------------------------------
+             SECCIÓN MANIFIESTO TELETURBIO
+             ---------------------------------------------------------------- -->
+        <section id="manifiesto" class="manifesto">
+            <div class="container text-center">
+
+                <h2>☢️ MANIFIESTO TELETURBIO ☢️</h2>
+                <p>Internet no es un lugar.</p>
+                <p>Internet somos nosotros.</p>
+                <p>Y nosotros somos un problema.</p>
+
+                <strong>💀NO CONFIAMOS EN NADIE💀</strong>
+
+                <div class="d-flex justify-content-center align-items-center flex-wrap gap-3 mt-4">
+                    <img src="img/tubbyland-dipsy.gif" width="200" class="estrambotico-gif gif-flotante-izq" alt="Dipsy Tubbyland">
+                    <img src="img/kiss.png" width="420" class="img-fluid estrambotico-gif" alt="Kiss Teleturbios">
+                    <img src="img/redo_po_lala.gif" width="200" class="estrambotico-gif gif-flotante-der" alt="Redo Po Lala">
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ----------------------------------------------------------------
+             SECCIÓN CONTACTO
+             ---------------------------------------------------------------- -->
+        <section id="contacto" class="container py-5">
+            <div class="contact-box">
+
+                <h2>📡 CONTACTA CON LOS TELETURBIOS</h2>
+                <p>¿Tienes información? ¿Quieres contarnos un secreto?</p>
+
+                <input type="text" class="form-control" placeholder="tu nombre...">
+                <input type="email" class="form-control" placeholder="tu email...">
+                <textarea class="form-control" rows="4" placeholder="mensaje..."></textarea>
+
+                <button class="btn btn-danger mt-3" onclick="enviarMensaje()">
+                    ENVIAR AL VACÍO 🕳️
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- ----------------------------------------------------------------
+             SECCIÓN ARCHIVO NEGRO (EXPEDIENTES CORPORATIVOS FILTRADOS)
+             ---------------------------------------------------------------- -->
+        <section id="archivo-negro" class="archivo-negro">
+
+            <div class="archivo-titulo">
+                <span class="glitch">☢ ARCHIVO NEGRO ☢</span>
+                <h2>EXPEDIENTES CORPORATIVOS</h2>
+                <img src="img/nene2.jpg" width="110" class="estrambotico-gif rounded-circle my-2" alt="Sol Cursed">
+                <p>
+                    Documentos recuperados. Empresas investigadas.
+                    Información que probablemente no deberías estar leyendo.
+                </p>
+            </div>
+
+            <div class="alerta-sensible">
+                ⚠️ ARCHIVOS SENSIBLES — El contenido que estás a punto de visualizar puede contener 
+                información perturbadora o comprometida. Teleturbios no se hace responsable del contenido 
+                mostrado ni de las consecuencias derivadas de su consulta.
+            </div>
+
+            <div class="expedientes-grid">
+
+                <!-- EXPEDIENTE 001 -->
+                <article class="expediente-card rojo" onclick="abrirExpediente(0)">
+                    <div class="expediente-top">
+                        <span>EXPEDIENTE #001</span>
+                        <span class="nivel">█████ CRÍTICO</span>
+                    </div>
+                    <h3>CORTE FRANCÉS</h3>
+                    <div class="delito">EXPLOTACIÓN LABORAL INFANTIL</div>
+                    <p>Documentos internos apuntan a una red de proveedores con condiciones laborales irregulares.</p>
+                    <div class="estado">⚠ INVESTIGACIÓN ABIERTA</div>
+                    <button>ABRIR EXPEDIENTE →</button>
+                </article>
+
+                <!-- EXPEDIENTE 002 -->
+                <article class="expediente-card morado" onclick="abrirExpediente(1)">
+                    <div class="expediente-top">
+                        <span>EXPEDIENTE #002</span>
+                        <span class="nivel">█████ CRÍTICO</span>
+                    </div>
+                    <h3>AMASONIA</h3>
+                    <div class="delito">BLANQUEO DE CAPITALES</div>
+                    <p>Una estructura de sociedades aparentemente independientes aparece conectada mediante movimientos financieros.</p>
+                    <div class="estado">● INFORMACIÓN FILTRADA</div>
+                    <button>ABRIR EXPEDIENTE →</button>
+                </article>
+
+                <!-- EXPEDIENTE 003 -->
+                <article class="expediente-card verde" onclick="abrirExpediente(2)">
+                    <div class="expediente-top">
+                        <span>EXPEDIENTE #003</span>
+                        <span class="nivel">████ ALTO</span>
+                    </div>
+                    <h3>BURGER PRINCESS</h3>
+                    <div class="delito">FRAUDE ALIMENTARIO</div>
+                    <p>Diferencias entre los productos declarados y los registros internos de proveedores.</p>
+                    <div class="estado">🔎 DOCUMENTOS EN REVISIÓN</div>
+                    <button>ABRIR EXPEDIENTE →</button>
+                </article>
+
+                <!-- EXPEDIENTE 004 -->
+                <article class="expediente-card amarillo" onclick="abrirExpediente(3)">
+                    <div class="expediente-top">
+                        <span>EXPEDIENTE #004</span>
+                        <span class="nivel">████ ALTO</span>
+                    </div>
+                    <h3>SPOTIFAIL</h3>
+                    <div class="delito">EXPLOTACIÓN LABORAL</div>
+                    <p>Contratos, jornadas y empresas intermediarias aparecen señalados en documentos internos.</p>
+                    <div class="estado">⚠ PRIORIDAD ALTA</div>
+                    <button>ABRIR EXPEDIENTE →</button>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ----------------------------------------------------------------
+             VENTANA MODAL DESPLEGABLE DE EXPEDIENTES (VISOR)
+             ---------------------------------------------------------------- -->
+        <div id="expediente-popup" class="expediente-overlay">
+            <div class="expediente-modal">
+                <div class="modal-cabecera">
+                    <span>☢ TELETURBIOS // ARCHIVO NEGRO</span>
+                    <button onclick="cerrarExpediente()">✕</button>
+                </div>
+                <div id="expediente-contenido"></div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <!-- ====================================================================
+         5. PIE DE PÁGINA (FOOTER)
+         ==================================================================== -->
+    <footer>
+        <p>☠️ TELETURBIOS © 2026 ☠️</p>
+        <p>Este sitio probablemente no debería existir.</p>
+        <p>VISITAS: <span id="visitas">001337</span></p>
+    </footer>
+
+
+    <!-- ====================================================================
+         6. CONTENEDOR FLOTANTE PARA VENTANAS EMERGENTES (POPUPS)
+         ==================================================================== -->
+    <div id="popup-container"></div>
+
+    <!-- Contenedor para Screamers Repentinos -->
+    <div id="screamer-container" class="screamer-overlay d-none"></div>
+
+
+    <!-- ====================================================================
+         7. SCRIPTS Y MÓDULOS JAVASCRIPT
+         ==================================================================== -->
+    <!-- Librería Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Datos Estáticos -->
+    <script src="js/data/expedientes.js"></script>
+    <script src="js/data/popups.js"></script>
+
+    <!-- Módulos de Funcionalidad -->
+    <script src="js/modules/ui-handlers.js"></script>
+    <script src="js/modules/terminal.js"></script>
+    <script src="js/modules/expedientes.js"></script>
+    <script src="js/modules/popups.js"></script>
+
+    <!-- Script Principal / Orquestador -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

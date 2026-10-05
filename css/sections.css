@@ -1,0 +1,249 @@
+/* ==========================================================================
+   TELETURBIOS - SECCIONES DE CONTENIDO (css/sections.css)
+   ==========================================================================
+   Estilos específicos de las secciones informativas del sitio web:
+   Hero, Noticias principales, Manifiesto y Formulario de Contacto.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TITULARES DE SECCIÓN GENERALES
+   -------------------------------------------------------------------------- */
+.section-title {
+    font-family: "Permanent Marker", cursive;
+    font-size: clamp(40px, 7vw, 70px);
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--rojo);
+    transform: rotate(-2deg);
+    text-shadow:
+        4px 4px var(--amarillo),
+        8px 8px var(--morado);
+}
+
+/* --------------------------------------------------------------------------
+   2. SECCIÓN HERO (BIENVENIDA Y BOTÓN PELIGROSO)
+   -------------------------------------------------------------------------- */
+.hero {
+    position: relative;
+    padding: 120px 20px;
+    background: var(--verde);
+    overflow: hidden;
+}
+
+/* Círculos gigantes decorativos en el fondo */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: var(--rojo);
+    left: -200px;
+    top: -200px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: var(--morado);
+    right: -150px;
+    bottom: -200px;
+}
+
+/* Caja de contenido central dentro del Hero */
+.hero-box {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 40px;
+    background: var(--blanco);
+    border: 7px solid var(--negro);
+    box-shadow:
+        15px 15px var(--rojo),
+        -15px -15px var(--amarillo);
+    transform: rotate(-1deg);
+}
+
+.glitch-text {
+    display: inline-block;
+    background: var(--rojo);
+    color: white;
+    padding: 6px 12px;
+    font-weight: bold;
+    transform: rotate(2deg);
+}
+
+.hero h2 {
+    font-family: "Permanent Marker", cursive;
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: 0.95;
+    margin: 30px 0;
+}
+
+.hero h2 span {
+    display: block;
+    color: var(--morado);
+    text-shadow: 5px 5px var(--amarillo);
+}
+
+.hero p {
+    font-size: 22px;
+}
+
+/* Botón turbo "NO PULSAR" con efecto de presión */
+.turbo-button {
+    background: var(--rojo) !important;
+    border: 4px solid var(--negro) !important;
+    border-radius: 0 !important;
+    font-weight: bold;
+    box-shadow: 7px 7px var(--negro);
+    transition: 0.15s;
+}
+
+.turbo-button:hover {
+    background: var(--morado) !important;
+    transform: translate(5px, 5px) rotate(-2deg);
+    box-shadow: 3px 3px var(--negro);
+}
+
+/* --------------------------------------------------------------------------
+   3. SECCIÓN NOTICIAS
+   -------------------------------------------------------------------------- */
+#noticias {
+    position: relative;
+    padding-top: 100px !important;
+    padding-bottom: 120px !important;
+}
+
+/* Tarjeta individual de noticia */
+.news-card {
+    position: relative;
+    min-height: 100%;
+    padding: 30px;
+    background: white;
+    border: 5px solid var(--negro);
+    box-shadow: 10px 10px var(--rojo);
+    transition: 0.2s;
+    transform: rotate(-1deg);
+}
+
+.news-card:hover {
+    transform: rotate(1deg) translateY(-8px);
+    box-shadow: 15px 15px var(--morado);
+}
+
+/* Variaciones de inclinación y sombras para dinamismo visual */
+.card-two {
+    transform: rotate(2deg);
+    box-shadow: 10px 10px var(--verde);
+}
+
+.card-three {
+    transform: rotate(-2deg);
+    box-shadow: 10px 10px var(--amarillo);
+}
+
+.news-card h3 {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.news-card small {
+    display: inline-block;
+    margin: 10px 0;
+    background: var(--negro);
+    color: var(--amarillo);
+    padding: 5px 8px;
+    font-family: monospace;
+}
+
+.news-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--rojo);
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   4. SECCIÓN MANIFIESTO
+   -------------------------------------------------------------------------- */
+.manifesto {
+    padding: 120px 20px;
+    background: var(--rojo);
+    color: white;
+    border-bottom: 8px solid var(--negro);
+    transform: rotate(-1deg);
+    width: 102%;
+    margin-left: -1%;
+}
+
+.manifesto h2 {
+    font-family: "Permanent Marker", cursive;
+    font-size: clamp(45px, 7vw, 80px);
+    color: var(--amarillo);
+}
+
+.manifesto p {
+    font-size: 30px;
+}
+
+.manifesto strong {
+    display: block;
+    margin-top: 50px;
+    font-size: clamp(40px, 8vw, 90px);
+    color: var(--verde);
+    text-shadow: 7px 7px var(--negro);
+}
+
+/* --------------------------------------------------------------------------
+   5. SECCIÓN CONTACTO
+   -------------------------------------------------------------------------- */
+.contact-box {
+    max-width: 750px;
+    margin: auto;
+    padding: 45px;
+    background: var(--amarillo);
+    color: var(--negro);
+    border: 6px solid var(--negro);
+    box-shadow: 15px 15px var(--verde);
+    transform: rotate(1deg);
+}
+
+.contact-box h2 {
+    font-family: "Permanent Marker", cursive;
+    color: var(--morado);
+    font-size: 40px;
+}
+
+.contact-box input,
+.contact-box textarea {
+    border: 3px solid var(--negro);
+    border-radius: 0;
+    margin-top: 15px;
+}
+
+/* --------------------------------------------------------------------------
+   6. ADAPTACIÓN PARA DISPOSITIVOS MÓVILES
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+    .logo {
+        font-size: 70px;
+        letter-spacing: -2px;
+    }
+
+    .hero-box {
+        padding: 40px 20px;
+    }
+
+    .manifesto {
+        width: 100%;
+        margin-left: 0;
+    }
+}

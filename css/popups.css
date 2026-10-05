@@ -1,0 +1,258 @@
+/* ==========================================================================
+   TELETURBIOS - VENTANAS EMERGENTES / POPUPS (css/popups.css)
+   ==========================================================================
+   Estilos y animaciones para el sistema de pop-ups intrusivos/interactivos
+   generados dinámicamente mediante JavaScript.
+   ========================================================================== */
+
+/* Contenedor fijo de toda la pantalla donde flotan las ventanas emergentes */
+#popup-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none; /* Permite hacer clic a través del contenedor hacia la web */
+    z-index: 9999;
+}
+
+/* Tarjeta base del popup emergente */
+.turbio-popup {
+    position: absolute;
+    width: 320px;
+    background: white;
+    color: #111;
+    border: 5px solid #111;
+    box-shadow: 10px 10px 0 #7627c7;
+    pointer-events: auto; /* Reactiva eventos del ratón dentro del popup */
+    animation: popupEntrada 0.25s ease-out;
+}
+
+/* Variantes de color de sombra neobrutalista */
+.popup-rojo {
+    box-shadow: 10px 10px 0 #e30613;
+}
+
+.popup-verde {
+    box-shadow: 10px 10px 0 #00a83b;
+}
+
+.popup-amarillo {
+    box-shadow: 10px 10px 0 #ffd600;
+}
+
+.popup-morado {
+    box-shadow: 10px 10px 0 #7627c7;
+}
+
+/* Cabecera estilo barra de ventana ejecutable (.exe) */
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    background: #7627c7;
+    color: white;
+    font-weight: bold;
+    border-bottom: 4px solid #111;
+}
+
+/* Cuerpo de la ventana emergente */
+.popup-body {
+    padding: 20px;
+    font-size: 17px;
+}
+
+.popup-body h3 {
+    margin-top: 0;
+    font-family: "Permanent Marker", cursive;
+    font-size: 28px;
+}
+
+/* Botón 'X' de cierre */
+.popup-close {
+    background: #e30613;
+    color: white;
+    border: 2px solid #111;
+    width: 28px;
+    height: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    background: #111;
+}
+
+/* Botones de acción dentro del popup */
+.popup-button {
+    background: #ffd600;
+    border: 3px solid #111;
+    padding: 8px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup-button:hover {
+    background: #00a83b;
+    color: white;
+}
+
+/* Opciones de respuesta para popups tipo Encuesta */
+.popup-option {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    background: #ffd600;
+    color: #111;
+    border: 3px solid #111;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.popup-option:hover {
+    background: #00a83b;
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Imagen absuda / GIF dentro de popups */
+.popup-gif {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    margin: 15px auto;
+    border: 3px solid var(--negro);
+}
+
+.fake-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 15px 0;
+    padding: 20px;
+    background: #7627c7;
+    color: #ffd600;
+    font-size: 35px;
+    border: 5px solid #111;
+    transform: rotate(-3deg);
+}
+
+/* Botones especiales de la ventana emergente rebelde */
+.rebelde-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+/* El botón 'SÍ' esquivo que se mueve cuando intentas hacer hover */
+.boton-si {
+    position: relative;
+    transition: 0.15s ease-out;
+}
+
+/* --------------------------------------------------------------------------
+   GIFS ESTRAMBÓTICOS Y SCREAMERS
+   -------------------------------------------------------------------------- */
+.estrambotico-gif {
+    display: inline-block;
+    border: 4px solid var(--negro);
+    box-shadow: 8px 8px 0 var(--rojo);
+    transition: transform 0.2s ease-in-out;
+}
+
+.estrambotico-gif:hover {
+    transform: scale(1.15) rotate(8deg);
+    box-shadow: 12px 12px 0 var(--morado);
+}
+
+.gif-flotante-izq {
+    transform: rotate(-6deg);
+    animation: flotarIzquierda 3s ease-in-out infinite alternate;
+}
+
+.gif-flotante-der {
+    transform: rotate(7deg);
+    animation: flotarDerecha 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes flotarIzquierda {
+    from { transform: translateY(0px) rotate(-6deg); }
+    to { transform: translateY(-15px) rotate(-2deg); }
+}
+
+@keyframes flotarDerecha {
+    from { transform: translateY(0px) rotate(7deg); }
+    to { transform: translateY(-18px) rotate(12deg); }
+}
+
+/* --------------------------------------------------------------------------
+   PANTALLA DE SCREAMER TELETURBIO
+   -------------------------------------------------------------------------- */
+.screamer-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(20, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    animation: flashPeligro 0.15s infinite alternate;
+}
+
+.screamer-overlay.d-none {
+    display: none !important;
+}
+
+.screamer-img {
+    max-width: 85vw;
+    max-height: 65vh;
+    border: 8px solid var(--rojo);
+    box-shadow: 0 0 50px var(--rojo), 0 0 100px var(--amarillo);
+    animation: screamerShake 0.08s infinite;
+}
+
+.screamer-title {
+    font-family: "Permanent Marker", cursive;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    color: var(--amarillo);
+    text-shadow: 5px 5px 0 var(--rojo), -5px -5px 0 var(--negro);
+    margin-top: 20px;
+    text-align: center;
+    animation: screamerShake 0.1s infinite;
+}
+
+@keyframes screamerShake {
+    0% { transform: translate(3px, 3px) rotate(0deg); }
+    20% { transform: translate(-3px, -3px) rotate(-2deg); }
+    40% { transform: translate(-5px, 2px) rotate(2deg); }
+    60% { transform: translate(4px, 4px) rotate(-1deg); }
+    80% { transform: translate(-2px, -4px) rotate(1deg); }
+    100% { transform: translate(3px, -2px) rotate(0deg); }
+}
+
+@keyframes flashPeligro {
+    from { background: rgba(180, 0, 0, 0.95); }
+    to { background: rgba(10, 0, 0, 0.98); }
+}
+
+/* --------------------------------------------------------------------------
+   ANIMACIÓN DE ENTRADA POPUP
+   -------------------------------------------------------------------------- */
+@keyframes popupEntrada {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}

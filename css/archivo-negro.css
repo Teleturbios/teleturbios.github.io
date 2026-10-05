@@ -1,0 +1,366 @@
+/* ==========================================================================
+   TELETURBIOS - ARCHIVO NEGRO Y EXPEDIENTES (css/archivo-negro.css)
+   ==========================================================================
+   Estilos de la sección confidencial "Archivo Negro", incluyendo la cuadrícula
+   de tarjetas de expedientes y la ventana modal flotante de inspección.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SECCIÓN PRINCIPAL DE ARCHIVO NEGRO
+   -------------------------------------------------------------------------- */
+.archivo-negro {
+    position: relative;
+    padding: 100px 7%;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(227, 6, 19, .15), transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(118, 39, 199, .18), transparent 25%),
+        #111;
+    color: white;
+    overflow: hidden;
+}
+
+/* Marca de agua repetida de texto CLASSIFIED de fondo */
+.archivo-negro::before {
+    content: "CLASSIFIED // CLASSIFIED // CLASSIFIED // CLASSIFIED //";
+    position: absolute;
+    top: 25px;
+    left: -50px;
+    font-size: 25px;
+    color: rgba(255,255,255,.04);
+    transform: rotate(-3deg);
+    white-space: nowrap;
+}
+
+.archivo-titulo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.archivo-titulo .glitch {
+    font-family: "Permanent Marker", cursive;
+    color: #ffd600;
+    font-size: 1.3rem;
+}
+
+.archivo-titulo h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    margin: 10px 0;
+    color: white;
+    text-shadow:
+        5px 5px #e30613,
+        -5px -5px #00a83b;
+}
+
+.archivo-titulo p {
+    max-width: 700px;
+    margin: auto;
+    color: #bbb;
+}
+
+/* Alerta de descargo de responsabilidad */
+.alerta-sensible,
+.alerta-ficticia {
+    max-width: 900px;
+    margin: 0 auto 50px;
+    padding: 18px 25px;
+    border: 3px solid #ffd600;
+    background: rgba(255,214,0,.08);
+    color: #ffd600;
+    font-weight: bold;
+    text-align: center;
+    transform: rotate(-.5deg);
+}
+
+/* --------------------------------------------------------------------------
+   2. REJILLA / GRID DE EXPEDIENTES
+   -------------------------------------------------------------------------- */
+.expedientes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Tarjeta individual de expediente confidencial */
+.expediente-card {
+    position: relative;
+    padding: 28px;
+    background: #1b1b1b;
+    border: 3px solid;
+    cursor: pointer;
+    transition: .25s ease-in-out;
+    overflow: hidden;
+}
+
+/* Estampado oblicuo "CONFIDENCIAL" de fondo */
+.expediente-card::after {
+    content: "CONFIDENCIAL";
+    position: absolute;
+    right: -35px;
+    top: 25px;
+    transform: rotate(35deg);
+    font-size: 12px;
+    font-weight: bold;
+    opacity: .18;
+}
+
+.expediente-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 10px 10px 0 rgba(255,255,255,.08);
+}
+
+/* Variantes de color por nivel de gravedad del expediente */
+.expediente-card.rojo {
+    border-color: #e30613;
+    box-shadow: 6px 6px 0 #e30613;
+}
+
+.expediente-card.morado {
+    border-color: #7627c7;
+    box-shadow: 6px 6px 0 #7627c7;
+}
+
+.expediente-card.verde {
+    border-color: #00a83b;
+    box-shadow: 6px 6px 0 #00a83b;
+}
+
+.expediente-card.amarillo {
+    border-color: #ffd600;
+    box-shadow: 6px 6px 0 #ffd600;
+}
+
+.expediente-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: .75rem;
+    font-weight: bold;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.nivel {
+    color: #e30613;
+}
+
+.expediente-card h3 {
+    font-family: "Permanent Marker", cursive;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.delito {
+    display: inline-block;
+    padding: 7px 12px;
+    margin-bottom: 18px;
+    background: #e30613;
+    color: white;
+    font-size: .75rem;
+    font-weight: bold;
+}
+
+.expediente-card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.estado {
+    margin: 20px 0;
+    font-family: monospace;
+    font-size: .8rem;
+}
+
+.expediente-card button {
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    padding: 10px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.expediente-card button:hover {
+    background: white;
+    color: #111;
+}
+
+/* --------------------------------------------------------------------------
+   3. VENTANA MODAL FLOANTE DE INSPECCIÓN DE EXPEDIENTE
+   -------------------------------------------------------------------------- */
+.expediente-overlay {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    inset: 0;
+    background: rgba(0,0,0,.88);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.expediente-overlay.activo {
+    display: flex;
+}
+
+.expediente-modal {
+    width: min(850px, 95vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #111;
+    color: #ffffff;
+    border: 4px solid #e30613;
+    box-shadow:
+        15px 15px 0 #7627c7,
+        -8px -8px 0 #00a83b;
+    animation: aparecerExpediente .25s ease;
+}
+
+@keyframes aparecerExpediente {
+    from {
+        opacity: 0;
+        transform: scale(.8) rotate(2deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.modal-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #e30613;
+    color: white;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.modal-cabecera button {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#expediente-contenido {
+    padding: 35px;
+    color: #ffffff;
+}
+
+#expediente-popup #expediente-contenido,
+#expediente-contenido p,
+#expediente-contenido li,
+#expediente-contenido strong {
+    color: #ffffff !important;
+}
+
+.expediente-numero {
+    color: #ffd600;
+    font-family: monospace;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.expediente-nombre {
+    font-family: "Permanent Marker", cursive;
+    font-size: 3rem;
+    margin: 5px 0 20px;
+    color: #ffffff;
+}
+
+.expediente-delito {
+    display: inline-block;
+    background: #e30613;
+    color: #ffffff;
+    padding: 8px 15px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.info-bloque {
+    margin: 25px 0;
+}
+
+.info-bloque h4 {
+    color: #00a83b;
+    font-family: monospace;
+    border-bottom: 1px dashed #444;
+    padding-bottom: 8px;
+}
+
+.info-bloque p {
+    color: #e0e0e0 !important;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Lista de archivos adjuntos dentro del expediente */
+.archivos-adjuntos,
+.archivos-falsos {
+    background: #050505;
+    border: 1px solid #333;
+    padding: 20px;
+    font-family: monospace;
+    color: #00ff66;
+}
+
+.archivos-adjuntos div,
+.archivos-falsos div {
+    padding: 5px 0;
+}
+
+.archivos-adjuntos div::before,
+.archivos-falsos div::before {
+    content: "> ";
+    color: #ffd600;
+}
+
+/* Documento con barras de censura e informacion legible */
+.documento-redactado {
+    background: #050505;
+    border: 1px solid #333;
+    padding: 20px;
+    font-family: monospace;
+    line-height: 1.8;
+    color: #00ff66;
+}
+
+.redactado {
+    background: #e30613;
+    color: #ffffff;
+    padding: 2px 6px;
+    font-weight: bold;
+}
+
+.teleturbios-firma {
+    margin-top: 30px;
+    padding: 20px;
+    border-left: 5px solid #7627c7;
+    background: rgba(118,39,199,.2);
+    font-family: "Permanent Marker", cursive;
+    color: #d9b8ff;
+}
+
+/* --------------------------------------------------------------------------
+   4. ADAPTACIÓN RESPONSIVA PARA PANTALLAS PEQUEÑAS
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .expedientes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .archivo-negro {
+        padding: 70px 5%;
+    }
+
+    .expediente-nombre {
+        font-size: 2.2rem;
+    }
+}

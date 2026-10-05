@@ -1,0 +1,80 @@
+/* ==========================================================================
+   TELETURBIOS - CONSOLA Y TERMINAL (css/terminal.css)
+   ==========================================================================
+   Estilos de la terminal decorativa de la cabecera (.fake-terminal) y de la
+   terminal interactiva basada en comandos (.terminal).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TERMINAL DECORATIVA (HEADER)
+   -------------------------------------------------------------------------- */
+.fake-terminal {
+    position: relative;
+    z-index: 4;
+    max-width: 600px;
+    margin: 50px auto 0;
+    padding: 18px;
+    background: var(--negro);
+    color: var(--verde);
+    text-align: left;
+    font-family: monospace;
+    border: 5px solid var(--morado);
+    transform: rotate(1deg);
+    box-shadow: 12px 12px var(--rojo);
+}
+
+.fake-terminal span {
+    color: var(--amarillo);
+}
+
+/* --------------------------------------------------------------------------
+   2. TERMINAL INTERACTIVA (EJECUTABLE EN MAIN)
+   -------------------------------------------------------------------------- */
+.terminal {
+    margin-bottom: 100px;
+    background: var(--negro);
+    color: var(--verde);
+    border: 6px solid var(--morado);
+    box-shadow: 15px 15px var(--amarillo);
+    font-family: monospace;
+}
+
+/* Barra superior de la ventana de la terminal */
+.terminal-title {
+    padding: 12px;
+    background: var(--rojo);
+    color: white;
+    font-weight: bold;
+}
+
+/* Área de resultados y registros impresos */
+#terminal-content {
+    padding: 30px;
+    min-height: 300px;
+}
+
+#terminal-content span {
+    color: var(--rojo);
+}
+
+.terminal-green {
+    color: var(--amarillo);
+}
+
+/* Campo de texto de la línea de comandos */
+#terminal-input {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 3px solid var(--verde);
+    color: var(--verde);
+    font-family: monospace;
+    outline: none;
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 600px) {
+    .fake-terminal {
+        font-size: 13px;
+    }
+}
